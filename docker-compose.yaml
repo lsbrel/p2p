@@ -1,0 +1,32 @@
+services:
+  tracker:
+    build:
+      context: .
+      dockerfile: ./docker/tracker/Dockerfile
+    restart: always
+    networks:
+      p2pnetwork:
+        ipv4_address: 172.18.0.2
+    ports:
+      - "8080:8081"
+
+  # seeder:
+  #   build:
+  #     context: .
+  #     dockerfile: ./docker/seeder/Dockerfile
+  #   restart: always
+  #   depends_on:
+  #     - tracker
+
+  # leecher:
+  #   image: node:latest
+  #   networks:
+  #     p2pnetwork:
+  #       ipv4_address: 172.18.0.4
+
+networks:
+  p2pnetwork:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/24
