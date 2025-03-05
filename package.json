@@ -7,14 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "seeder": "nodemon src/Seeder/main.ts",
     "leecher": "nodemon src/Leecher/main.ts",
-    "tracker": "nodemon src/Tracker/main.ts"
+    "tracker": "nodemon src/Tracker/main.ts",
+    "stun": "nodemon src/Stun/stunserver.ts",
+    "stunclient": "nodemon src/Stun/stunclient.ts"
   },
   "author": "lsbrel",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.7",
     "nat-pmp": "^1.0.0",
-    "nat-upnp": "^1.1.1"
+    "nat-upnp": "^1.1.1",
+    "stun": "^2.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.5.2",
